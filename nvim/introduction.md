@@ -36,8 +36,8 @@ vim.cmd 'set clipboard+=unnamedplus'
 
 ## キーマッピング
 vim.g.mapleader = ' '
-api.nvim_set_keymap('n', '<C-N>', ':bnext<CR>', { noremap = true })
-api.nvim_set_keymap('n', '<C-P>', ':bnext<CR>', { noremap = true })
+api.nvim_set_keymap('n', '<C-N>', ':bnext<CR>', { noremap = true, silent = true })
+api.nvim_set_keymap('n', '<C-P>', ':bnext<CR>', { noremap = true, silent = true })
 
 ## 操作
 ```
