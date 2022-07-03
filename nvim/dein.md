@@ -1,4 +1,10 @@
 # dein.vim
+## インストール
+```sh
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+# For example, we just use `~/.cache/dein` as installation directory
+sh ./installer.sh ~/.cache/dein
+```
 
 ## セットアップ
 https://wonwon-eater.com/neovim-susume-plugin-manager/ の記事にあるスクリプトを使う。
