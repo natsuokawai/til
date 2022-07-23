@@ -50,3 +50,113 @@ $p \land \lnot p$のように、命題の真理値が常にTになるとき、�
 
 逆に常に真理値がFになる命題を矛盾命題という。（例: $p \land \lnot p$）またこの性質を矛盾律という。
 
+## 2.3 命題代数
+### 論理同値
+命題p、qがあり、それらの演算により得られる命題r、sを考える。
+p、qの任意の真理値についてrとsの真理値が同じであるようなとき、rとsは論理同値であるといい、$r \equiv s$と表す。
+
+### 命題代数の法則
+#### べき等律
+$p \lor p \equiv p$
+$p \land p \equiv p$
+
+#### 結合律
+$(p \lor q) \lor r \equiv p \lor (q \lor r)$
+$(p \land q) \land r \equiv p \land (q \land r)$
+
+#### 交換率
+$p \lor q \equiv q \lor p$
+$p \land q \equiv q \land p$
+
+#### 分配率
+$p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$
+$p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$
+
+#### 同一律
+$p \lor f \equiv p$
+$p \land t \equiv p$
+
+$p \lor t \equiv t$
+$p \land f \equiv f$
+
+#### 補元律
+$p \lor \lnot p \equiv t$
+$p \land \lnot p \equiv f$
+
+$\lnot t \equiv f$
+$\lnot f \equiv t$
+
+#### 対合律
+$\lnot \lnot p \equiv p$
+
+#### ド・モルガンの法則
+$\lnot (p \lor q) \equiv \lnot p \land \lnot q$
+$\lnot (p \land q) \equiv \lnot p \lor \lnot q$
+
+### 結合律と $\land$、$\lor$ の拡張
+結合律より、$p \land q \land r$と書くことが許される。
+本来は2つの命題に対する演算であった$\land$、$\lor$を3つ以上の命題に対する演算に拡張し、$p_1 \land p_2 \land ... \land p_n$と表す。
+
+### 命題代数の双対性
+上記の命題代数の法則の各ペアにおいて、以下の変換を行うともう一方の法則になる。（双対性）
+
+- $\land$ を $\lor$ に置き換え
+- $\lor$ を $\land$ に置き換え
+- $t$ を $f$ に置き換え
+- $f$ を $t$ に置き換え
+
+※対合率は1つしかないが、上記操作を行っても何も変化がなく自身と同じになる。（自己双対）
+
+## 2.4 含意と同値の論理演算子
+### 含意
+「pならばqである」という形の文（条件文）を表す論理演算子。
+$p \rightarrow q$と表す。
+
+| $p$ | $q$ | $p \rightarrow q$ |
+|:---:|:---:|:---:|
+| T | T | T |
+| T | F | F |
+| F | T | T |
+| F | F | T |
+
+$p \rightarrow q$と$\lnot p \lor q$は論理同値である。
+
+| $p$ | $\lnot p$ | $q$ | $\not p \lor q$ |
+|:---:|:---:|:---:|:---:|
+| T |  F | T | T |
+| T |  F | F | F |
+| F |  T | T | T |
+| F |  T | F | T |
+
+### 同値
+「pとqは同値である」という形の文を表す演算子。
+$p \leftrightarrow q$と表す。
+
+| $p$ | $q$ | $p \leftrightarrow q$ |
+|:---:|:---:|:---:|
+| T | T | T |
+| T | F | F |
+| F | T | F |
+| F | F | T |
+
+$p \leftrightarrow q$と$(p \land q) \lor (\lnot p \land \lnot q)$は論理同値である。
+
+| $p$ | $q$ | $p \land q$ | $\lnot p \land \lnot q$ | $(p \land q) \lor (\lnot p \land \lnot q)$ |
+|:---:|:---:|:---:|:---:|:---:|
+| T | T | T | F | T |
+| T | F | F | F | F |
+| F | T | F | F | F |
+| F | F | F | T | T |
+
+### 逆・裏・対偶
+$p \rightarrow q$という命題があるとき
+
+逆: $q \rightarrow p$
+裏: $\lnot p \rightarrow \lnot q$
+対偶: $\lnot q \rightarrow \lnot p$
+
+$p \rightarrow q$の対偶$\lnot q \rightarrow \lnot p$は
+
+$$\lnot q \rightarrow \lnot p \equiv \lnot \lnot q \lor \lnot p \equiv q \lor \lnot p \equiv \lnot p \lor q \equiv p \rightarrow q$$
+
+となるので、$p \rightarrow q$と論理同値である。
